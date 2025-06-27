@@ -1,106 +1,132 @@
 ⚙️ Prerequisites and Development Setup
 
-To successfully develop and deploy the ResolveNow online complaint registration and management system, the following tools and technologies must be installed and configured:
+To build and run the ResolveNow online complaint registration and management system, make sure the following tools and technologies are installed and properly configured on your system.
 
 🟢 Node.js and npm
-Node.js is a high-performance JavaScript runtime environment that enables server-side code execution. npm (Node Package Manager) is used to install and manage project dependencies.
-🔗 Download: https://nodejs.org/en/download/
-📘 Installation Instructions: https://nodejs.org/en/download/package-manager/
+
+Node.js allows you to run JavaScript on the server side.
+
+npm (Node Package Manager) helps you install required libraries.
+
+Download: https://nodejs.org/en/download/
+
+Installation Guide: https://nodejs.org/en/download/package-manager/
 
 🚀 Express.js
-Express.js is a minimalist and flexible Node.js web framework for building APIs and web applications. It simplifies backend logic, routing, and middleware integration.
-💡 Installation Command: npm install express
+
+A minimal and powerful web framework for Node.js.
+
+Used for backend routing, handling APIs, and middleware.
+
+To install, run: npm install express
 
 🍃 MongoDB
-MongoDB is a powerful NoSQL database that stores data in a flexible, JSON-like format. It is ideal for handling dynamic data models and large volumes of information.
-🔗 Download: https://www.mongodb.com/try/download/community
-📘 Installation Guide: https://docs.mongodb.com/manual/installation/
+
+A NoSQL database that stores data in flexible, JSON-like format.
+
+Used to store user data, complaints, chat messages, and more.
+
+Download: https://www.mongodb.com/try/download/community
+
+Installation Guide: https://docs.mongodb.com/manual/installation/
 
 ⚛️ React.js
-React.js is a popular JavaScript library for building dynamic, component-based user interfaces. It allows for efficient rendering and responsive frontend development.
-📘 Setup Guide: https://reactjs.org/docs/create-a-new-react-app.html
 
-🧰 Additional Essentials
+A JavaScript library for building fast and interactive user interfaces.
 
-🌐 HTML, CSS, JavaScript: Core web technologies for structure, styling, and interactivity
+Used to build the frontend of this project.
 
-📦 Axios: For making HTTP requests from the frontend to the backend
+Setup Guide: https://reactjs.org/docs/create-a-new-react-app.html
 
-🎨 Bootstrap and Material UI: Libraries for responsive and aesthetic UI design
+🧰 Other Essential Tools
 
-🔧 Git: Version control system for tracking changes and collaboration
-🔗 Download: https://git-scm.com/downloads
+🌐 HTML, CSS, JavaScript – for building and styling web pages
 
-🛠️ Project Structure and Setup
+📦 Axios – to send HTTP requests from React to the backend
 
-Frontend (React.js)
-1️⃣ Initialize the project using Create React App
-2️⃣ Install UI libraries like Axios, Bootstrap, and Material UI
-3️⃣ Build reusable UI components for login, registration, dashboard, and complaint submission
-4️⃣ Implement routing and navigation using React Router
-5️⃣ Integrate with backend API using Axios
+🎨 Bootstrap & Material UI – for responsive and attractive UI components
 
-Backend (Node.js + Express.js)
-1️⃣ Initialize the backend project with npm
-2️⃣ Install necessary libraries: Express.js, Mongoose, CORS, Body-parser
-3️⃣ Set up server file with middleware and route handling
-4️⃣ Implement authentication, CRUD operations, and real-time communication logic
+🔧 Git – for version control and collaboration
+
+Git Download: https://git-scm.com/downloads
+
+🛠️ Project Setup
+
+Frontend (React.js):
+
+Create a React app using: npx create-react-app frontend
+
+Install dependencies: Axios, Bootstrap, Material UI
+
+Build UI components: Login, Registration, Dashboard, Complaint Form
+
+Set up routing using react-router-dom
+
+Connect frontend with backend APIs using Axios
+
+Backend (Node.js + Express.js):
+
+Initialize project with: npm init -y
+
+Install dependencies: Express, Mongoose, CORS, Body-parser
+
+Set up Express server (server.js)
+
+Create routes for authentication, complaint handling, and chat
+
+Connect to MongoDB using Mongoose
 
 🗂️ Database Schemas
 
-👤 User Schema (user_Schema)
-Includes fields: name, email, password, phone, userType
+👤 User Schema
+Fields: name, email, password, phone, userType
 
-📝 Complaint Schema (complaint_schema)
-Includes: userId, name, address, city, state, pincode, comment, status
+📝 Complaint Schema
+Fields: userId, name, address, city, state, pincode, comment, status
 
-📌 Assigned Complaint Schema (assigned_complaint)
-Includes: agentId, complaintId, status, agentName
+📌 Assigned Complaint Schema
+Fields: agentId, complaintId, agentName, status
 
-💬 Message Schema (message)
-Includes: name, message, complaintId
+💬 Chat Message Schema
+Fields: name, message, complaintId
 
-Each schema is stored in its respective MongoDB collection using Mongoose.
+Each schema is managed using Mongoose and stored in MongoDB.
 
 🔐 Authentication
 
-Implemented using JWT (JSON Web Tokens) or session-based strategies
+JWT-based authentication is used
 
-Includes secure login, registration, and middleware-protected routes
+Includes registration, login, and protected routes
 
-Tokens are stored in browser storage and used for authenticated API requests
+Tokens are stored securely and sent with each request
 
 🧑‍💼 Admin Features
 
-Assign complaints to available agents
+Assign complaints to agents
 
-Access and monitor system-wide complaint data
+Track status of all complaints
 
-Manage users, statuses, and platform compliance
+View and manage users and system data
 
-🧯 Error Handling
+❗ Error Handling
 
-Centralized error middleware captures and logs exceptions
+Central error handler to manage application issues
 
-Validates request data and returns descriptive HTTP error responses
+Validates user input and shows proper error messages
 
-Common status codes: 400 (Bad Request), 401 (Unauthorized), 404 (Not Found), 500 (Server Error)
+Uses status codes like 400, 401, 404, 500
 
-🧾 Version Control and Deployment
+📦 Version Control & Deployment
 
-Use Git for version control and collaboration
+Use Git and GitHub for version control
 
-GitHub recommended for remote repository management
+Deploy frontend on Vercel or Netlify
 
-Deployment options:
+Deploy backend on Render, Railway, or Heroku
 
-Frontend: Vercel, Netlify
+Use MongoDB Atlas for cloud database hosting
 
-Backend: Render, Railway, Heroku
-
-Database: MongoDB Atlas (Cloud-hosted MongoDB)
-
-🖥️ Recommended Development Tools
+🖥️ Recommended Tools for Development
 
 Visual Studio Code (VS Code)
 
@@ -108,14 +134,12 @@ WebStorm
 
 Sublime Text
 
-📚 Helpful Resources
+📚 Useful Learning Resources
 
-Mongoose + MongoDB Integration Guide:
-https://www.section.io/engineering-education/nodejs-mongoosejs-mongodb/
+Node.js + MongoDB Integration: https://www.section.io/engineering-education/nodejs-mongoosejs-mongodb/
 
 React Documentation: https://reactjs.org/
 
 Express Documentation: https://expressjs.com/
 
-MongoDB Docs: https://docs.mongodb.com/
-
+MongoDB Documentation: https://docs.mongodb.com/
