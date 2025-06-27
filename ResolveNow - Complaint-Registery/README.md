@@ -1,191 +1,121 @@
-PRE-REQUISITES
-Here are the key prerequisites for developing a full-stack application using Node.js, Express.js, MongoDB, React.js: 
+⚙️ Prerequisites and Development Setup
 
+To successfully develop and deploy the ResolveNow online complaint registration and management system, the following tools and technologies must be installed and configured:
 
-Node.js and npm: 
+🟢 Node.js and npm
+Node.js is a high-performance JavaScript runtime environment that enables server-side code execution. npm (Node Package Manager) is used to install and manage project dependencies.
+🔗 Download: https://nodejs.org/en/download/
+📘 Installation Instructions: https://nodejs.org/en/download/package-manager/
 
+🚀 Express.js
+Express.js is a minimalist and flexible Node.js web framework for building APIs and web applications. It simplifies backend logic, routing, and middleware integration.
+💡 Installation Command: npm install express
 
-Node.js is a powerful JavaScript runtime environment that allows you to run JavaScript code on the server-side. It provides a scalable and efficient platform for building network applications. 
+🍃 MongoDB
+MongoDB is a powerful NoSQL database that stores data in a flexible, JSON-like format. It is ideal for handling dynamic data models and large volumes of information.
+🔗 Download: https://www.mongodb.com/try/download/community
+📘 Installation Guide: https://docs.mongodb.com/manual/installation/
 
-Install Node.js and npm on your development machine, as they are required to run JavaScript on the server-side. 
+⚛️ React.js
+React.js is a popular JavaScript library for building dynamic, component-based user interfaces. It allows for efficient rendering and responsive frontend development.
+📘 Setup Guide: https://reactjs.org/docs/create-a-new-react-app.html
 
-Download: https://nodejs.org/en/download/ 
+🧰 Additional Essentials
 
-Installation instructions: https://nodejs.org/en/download/package-manager/ 
+🌐 HTML, CSS, JavaScript: Core web technologies for structure, styling, and interactivity
 
+📦 Axios: For making HTTP requests from the frontend to the backend
 
-Express.js: 
+🎨 Bootstrap and Material UI: Libraries for responsive and aesthetic UI design
 
+🔧 Git: Version control system for tracking changes and collaboration
+🔗 Download: https://git-scm.com/downloads
 
-Express.js is a fast and minimalist web application framework for Node.js. It simplifies the process of creating robust APIs and web applications, offering features like routing, middleware support, and modular architecture. 
+🛠️ Project Structure and Setup
 
-Install Express.js, a web application framework for Node.js, which handles server-side routing, middleware, and API development. 
+Frontend (React.js)
+1️⃣ Initialize the project using Create React App
+2️⃣ Install UI libraries like Axios, Bootstrap, and Material UI
+3️⃣ Build reusable UI components for login, registration, dashboard, and complaint submission
+4️⃣ Implement routing and navigation using React Router
+5️⃣ Integrate with backend API using Axios
 
-Installation: Open your command prompt or terminal and run the following command:
+Backend (Node.js + Express.js)
+1️⃣ Initialize the backend project with npm
+2️⃣ Install necessary libraries: Express.js, Mongoose, CORS, Body-parser
+3️⃣ Set up server file with middleware and route handling
+4️⃣ Implement authentication, CRUD operations, and real-time communication logic
 
- 
+🗂️ Database Schemas
 
-npm install express 
+👤 User Schema (user_Schema)
+Includes fields: name, email, password, phone, userType
 
+📝 Complaint Schema (complaint_schema)
+Includes: userId, name, address, city, state, pincode, comment, status
 
-MongoDB: 
+📌 Assigned Complaint Schema (assigned_complaint)
+Includes: agentId, complaintId, status, agentName
 
+💬 Message Schema (message)
+Includes: name, message, complaintId
 
-MongoDB is a flexible and scalable NoSQL database that stores data in a JSON-like format. It provides high performance, horizontal scalability, and seamless integration with Node.js, making it ideal for handling large amounts of structured and unstructured data. 
+Each schema is stored in its respective MongoDB collection using Mongoose.
 
+🔐 Authentication
 
-Set up a MongoDB database to store your application's data. 
+Implemented using JWT (JSON Web Tokens) or session-based strategies
 
-Download: https://www.mongodb.com/try/download/community 
+Includes secure login, registration, and middleware-protected routes
 
-Installation instructions: https://docs.mongodb.com/manual/installation/ 
+Tokens are stored in browser storage and used for authenticated API requests
 
+🧑‍💼 Admin Features
 
-React.js: 
+Assign complaints to available agents
 
+Access and monitor system-wide complaint data
 
-React.js is a popular JavaScript library for building user interfaces. It enables developers to create interactive and reusable UI components, making it easier to build dynamic and responsive web applications. 
+Manage users, statuses, and platform compliance
 
-Install React.js, a JavaScript library for building user interfaces. 
+🧯 Error Handling
 
-Follow the installation guide: https://reactjs.org/docs/create-a-new-react-app.html 
+Centralized error middleware captures and logs exceptions
 
+Validates request data and returns descriptive HTTP error responses
 
-HTML, CSS, and JavaScript: Basic knowledge of HTML for creating the structure of your app, CSS for styling, and JavaScript for client-side interactivity is essential. 
+Common status codes: 400 (Bad Request), 401 (Unauthorized), 404 (Not Found), 500 (Server Error)
 
+🧾 Version Control and Deployment
 
-Database Connectivity: Use a MongoDB driver or an Object-Document Mapping (ODM) library like Mongoose to connect your Node.js server with the MongoDB database and perform CRUD (Create, Read, Update, Delete) operations. To Connect the Database with Node JS go through the below provided link: 
+Use Git for version control and collaboration
 
-https://www.section.io/engineering-education/nodejs- mongoosejs-mongodb/ 
+GitHub recommended for remote repository management
 
+Deployment options:
 
-Front-end Framework: Utilize Reactjs to build the user-facing part of the application, including entering complaints, status of the complaints, and user interfaces for the admin dashboard. 
+Frontend: Vercel, Netlify
 
-For making better UI we have also used some libraries like material UI and boostrap.
+Backend: Render, Railway, Heroku
 
+Database: MongoDB Atlas (Cloud-hosted MongoDB)
 
-Version Control: Use Git for version control, enabling collaboration and tracking changes throughout the development process. Platforms like GitHub or Bitbucket can host your repository. 
+🖥️ Recommended Development Tools
 
-Git: Download and installation instructions can be found at: https://git-scm.com/downloads 
+Visual Studio Code (VS Code)
 
+WebStorm
 
-Development Environment: Choose a code editor or Integrated Development Environment (IDE) that suits your preferences, such as Visual Studio Code, Sublime Text, or WebStorm. 
+Sublime Text
 
-Frontend Development
-Setup React Application:
+📚 Helpful Resources
 
-Bringing Customer Care Registry to life involves a three-step development process. First, a solid foundation is built using React.js. This includes creating the initial application structure, installing necessary libraries, and organizing the project files for efficient development. Next, the user interface (UI) comes to life. To start the development process for the frontend, follow the below steps.
+Mongoose + MongoDB Integration Guide:
+https://www.section.io/engineering-education/nodejs-mongoosejs-mongodb/
 
-Install required libraries.
+React Documentation: https://reactjs.org/
 
-Create the structure directories.
+Express Documentation: https://expressjs.com/
 
-Design UI components:
-
-Reusable components will be created for all the interactive elements you'll see on screen, from stock listings and charts to buttons and user profiles. Next, we'll implement a layout and styling scheme to define the overall look and feel of the application. This ensures a visually-appealing and intuitive interface.  Finally, a navigation system will be integrated, allowing you to effortlessly explore different sections of Customer Care Registry, like making specific complaints or managing your Product complaints.
-
-Implement frontend logic:
-
-In the final leg of the frontend development, we'll bridge the gap between the visual interface and the underlying data. It involves the below stages.
-
-Integration with API endpoints.
-
-Implement data binding.
-Database Development
-User Schema:
-
-The user schema defines the structure of user data stored in the database. It includes fields such as name, email, password, phone, and userType.
-
-Each user must provide a name, email, password, phone number, and userType (e.g., customer, agent, admin).
-
-User data is stored in the "user_Schema" collection in the MongoDB database.
-
-Complaint Schema:
-
-The complaint schema specifies the format of complaint data registered by users.
-
-It contains fields like userId, name, address, city, state, pincode, comment, and status.
-
-Complaints are associated with users through the userId field, and each complaint must have a name, address, city, state, pincode, comment, and status.
-
-Complaint data is stored in the "complaint_schema" collection in the MongoDB database.
-
-Assigned Complaint Schema:
-
-The assigned complaint schema defines how complaints are assigned to agents for resolution.
-
-It includes fields such as agentId, complaintId, status, and agentName.
-
-Each assigned complaint is linked to a specific agent (identified by agentId) and complaint (identified by complaintId).
-
-The status field indicates the current status of the assigned complaint.
-
-Assigned complaint data is stored in the "assigned_complaint" collection in the MongoDB database.
-
-Chat Window Schema:
-
-The chat window schema governs the structure of messages exchanged between users and agents regarding specific complaints.
-
-It comprises fields like name, message, and complaintId.
-
-Messages are associated with a complaint through the complaintId field, allowing for easy tracking and retrieval of chat history for each complaint.
-
-Message data is stored in the "message" collection in the MongoDB database
-Backend Development
-Set Up Project Structure:
-
-Create a new directory for your project and set up a package.json file using npm init               command.
-
-Install necessary dependencies such as Express.js, Mongoose, and other required packages.
-
-Set Up Project Structure:
-
-Create a new directory for your project and set up a package.json file using npm init  command.
-
-Install necessary dependencies such as Express.js, Mongoose, and other required packages.
-
-Create Express.js Server:
-
-Set up an Express.js server to handle HTTP requests and serve API endpoints.
-
-Configure middleware such as body-parser for parsing request bodies and cors for handling cross-origin requests.
-
-
-Define API Routes:
-
-Create separate route files for different API functionalities such as authentication, stock actions, and transactions.
-
-Implement route handlers using Express.js to handle requests and interact with the database.
-
-
-
-Implement Data Models:
-Define Mongoose schemas for the different data entities like Bank, users, transactions, deposits and loans.
-
-Create corresponding Mongoose models to interact with the MongoDB database.
-
-Implement CRUD operations (Create, Read, Update, Delete) for each model to perform database operations.
-
-User Authentication:
-Implement user authentication using strategies like JSON Web Tokens (JWT) or session-based authentication.
-
-Create routes and middleware for user registration, login, and logout.
-
-Set up authentication middleware to protect routes that require user authentication.
-
-
-Handle new transactions:
-Allow users to make transactions to other users using the user’s account id.
-
-Update the transactions and account balance dynamically in real-time.
-
-
-Admin Functionality:
-Implement routes and controllers specific to admin functionalities such as fetching all the data regarding users, transactions, stocks and orders.
-
-
-Error Handling:
-Implement error handling middleware to catch and handle any errors that occur during the API requests.
-
-Return appropriate error responses with relevant error messages and HTTP status codes.
+MongoDB Docs: https://docs.mongodb.com/
 
